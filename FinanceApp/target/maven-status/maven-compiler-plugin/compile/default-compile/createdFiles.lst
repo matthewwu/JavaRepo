@@ -1,0 +1,9 @@
+com/mwu/finance/app/Application.class
+com/mwu/finance/model/AssetClass.class
+com/mwu/finance/model/Stock.class
+com/mwu/finance/accessMongo/PortfolioRepositoryMongo.class
+com/mwu/finance/model/Portfolio.class
+com/mwu/finance/lib/FinanceCommon.class
+com/mwu/finance/accessMongo/IPortfolioRepositoryMongo.class
+com/mwu/finance/access/IFinanceAccess.class
+com/mwu/finance/model/Asset.class

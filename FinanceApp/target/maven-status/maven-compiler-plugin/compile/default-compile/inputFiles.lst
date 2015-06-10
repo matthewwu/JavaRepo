@@ -1,0 +1,9 @@
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/lib/FinanceCommon.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/app/Application.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/accessMongo/PortfolioRepositoryMongo.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/model/AssetClass.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/model/Portfolio.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/access/IFinanceAccess.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/model/Asset.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/model/Stock.java
+/Users/mwu/DevRepo/JavaRepo/FinanceApp/src/main/java/com/mwu/finance/accessMongo/IPortfolioRepositoryMongo.java
