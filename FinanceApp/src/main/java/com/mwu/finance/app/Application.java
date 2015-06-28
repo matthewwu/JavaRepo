@@ -14,6 +14,11 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.core.query.Criteria;
+
+import org.apache.spark.api.java.*;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.function.Function;
+
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 import yahoofinance.histquotes.HistoricalQuote;
@@ -60,6 +65,8 @@ public class Application implements CommandLineRunner{
 
     public static void main(String[] args)
     {
+        SparkTest();
+
         ApplicationContext ctx = new GenericXmlApplicationContext("applicationContext.xml");
         //ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
@@ -75,8 +82,35 @@ public class Application implements CommandLineRunner{
             System.out.println(pitem.getId());
         }
 
-
+        MongoClient mc = new MongoClient();
         //SpringApplication.run(Application.class, args);
+    }
+
+    private static void SparkTest()
+    {
+        String logFile = "/Users/mwu/DevRepo/spark-1.3.1-bin-hadoop2.6/README.md";
+        SparkConf conf = new SparkConf().setMaster("local").setAppName("Matt Spark App");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+        JavaRDD<String> logData = sc.textFile(logFile);
+
+        JavaRDD<String> containA = logData.filter(
+                new Function<String, Boolean>() {
+                    @Override
+                    public Boolean call(String s) throws Exception {
+                        return s.contains("a");
+                    }
+                }
+        );
+
+        long numAs = containA.count();
+
+        long numBs = logData.filter(new Function<String, Boolean>() {
+            public Boolean call(String s) { return s.contains("b"); }
+        }).count();
+
+
+
+        System.out.println("Lines with a: " + numAs + ", lines with b: " + numBs);
     }
 
 }

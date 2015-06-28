@@ -10,7 +10,6 @@ public class ListDev {
     private List listA = new ArrayList<Person>();
 
 
-
     public void CollectionList()
     {
         //List

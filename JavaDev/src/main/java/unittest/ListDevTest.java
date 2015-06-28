@@ -1,14 +1,12 @@
 package unittest;
 
+import com.mwulib.IteratorUtil;
 import com.mwulib.ListDev;
 import com.mwulib.Person;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -72,4 +70,25 @@ public class ListDevTest {
 
 
     }
+
+    @Test
+    public void iteratorTest() throws  Exception
+    {
+        IteratorUtil<String> iu = new IteratorUtil<String>();
+
+        List<Iterator<String>> lls = new ArrayList<Iterator<String>>();
+        List<String> ls1 = new ArrayList<String>();
+        ls1.add("ls-1");
+        ls1.add("ls-2");
+        List<String> ls2 = new ArrayList<String>();
+        ls2.add("ls-2");
+        ls2.add("ls-2");
+        lls.add(ls1.iterator());
+        lls.add(ls2.iterator());
+
+        iu.flatten(lls.iterator());
+
+
+    }
+
 }

@@ -2,6 +2,7 @@
  * Created by mwu on 6/7/15.
  */
 
+import com.mwulib.RunnerableWorker;
 import org.apache.spark.api.java.*;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.Function;
@@ -16,9 +17,18 @@ public class Main {
                 SparkTest();
 
             }
+            else if(arg1.equals("Thread"))
+            {
+                TestThread();
+            }
         }
 
         System.out.println("Hello, World!");
+    }
+
+    public static void TestThread(){
+        RunnerableWorker rw = new RunnerableWorker();
+        rw.run();
     }
 
     public static void SparkTest()
