@@ -4,6 +4,7 @@ import com.clearspring.analytics.util.ListNode2;
 
 import javax.swing.tree.TreeNode;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by mwu on 6/9/15.
@@ -63,8 +64,11 @@ public class LeetCode {
                 r = m;
             }
         }
+        if(l == r){
+            return r+1;
+        }
 
-        return -1;
+        return l;
     }
 
     public static boolean IsValidPalindrome(String s)
@@ -409,22 +413,13 @@ public class LeetCode {
     }
 
 
+    private void test(){
+        LinkedBlockingQueue<Integer> q = new LinkedBlockingQueue<>();
+        LinkedList<Integer> ll = new LinkedList<>();
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        List<Integer> l = new ArrayList<>();
+        int[] iArr = new int[200];
+        HashSet<Integer> hs = new HashSet<>();
 
-
-    /*
-    public Iterator<T> flatten(Iterator<Iterator<T>> iterators) {
-        //iterators is a collection of Iterator
-        //Iterator<T> retIterator = new List.iterator();
-        List<Iterator<Integer> > arryList = new ArrayList<Iterator<Integer>>();
-        while (iterators.hasNext(){
-            //retIterator.add(iterators.nex));
-            Iterator<T> value = iterators.next();
-            arrayList.add(value);
-        }
-        //return retIterator;
-        //Iterator<T>  result = arrayList.iterator();
-        return arryList.iterator();
-        // return iterator containing all values of type T contained in the iterators inside "iterators".
     }
-    */
 }

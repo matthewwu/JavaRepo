@@ -1,5 +1,6 @@
 package com.mwulib;
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 /**
@@ -60,6 +61,24 @@ public class ListDev {
         return PersonMapByLast;
     }
 
+    public void LinkedList(){
+        LinkedList<Person> llPerson = new LinkedList<>();
+        llPerson.add(new Person());
+
+        Stack<Person> sPerson = new Stack<>();
+        Iterator io = sPerson.iterator();
+        while (io.hasNext()){
+
+        }
+        for(Person p: sPerson){
+
+        }
+
+        HashSet<Person> personHashSet = new HashSet<>();
+        LinkedBlockingQueue<Person> lbq = new LinkedBlockingQueue<>();
+
+
+    }
 }
 
 

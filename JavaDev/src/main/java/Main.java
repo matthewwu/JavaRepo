@@ -7,6 +7,8 @@ import org.apache.spark.api.java.*;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.Function;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -47,6 +49,8 @@ public class Main {
         }).count();
 
         System.out.println("Lines with a: " + numAs + ", lines with b: " + numBs);
+
+
     }
 }
 

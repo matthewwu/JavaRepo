@@ -27,7 +27,7 @@ public final class RangeContainerImp implements RangeContainer {
 
     @Override
     public Ids findIdsInRange(long fromValue, long toValue, boolean fromInclusive, boolean toInclusive) {
-        
+
         int fromIndex = BinarySearchUtil.lowestIndexNotSmaller(data,fromValue,fromInclusive);
 
         int toIndex = BinarySearchUtil.greatestIndexNotExceeding(data,toValue,toInclusive);
